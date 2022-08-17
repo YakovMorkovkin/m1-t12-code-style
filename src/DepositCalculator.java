@@ -4,8 +4,8 @@ public class DepositCalculator {
     int accuracy = 2; //Точность округления
     double yearRate = 0.06; //Годовая процентная ставка
 
-    double calculateComplexPercent(double Amount, double yearRate, int depositPeriod) {
-        double amountWithProfitRaw = Amount * Math.pow((1 + yearRate / 12), 12 * depositPeriod);
+    double calculateComplexPercent(double amount, double yearRate, int depositPeriod) {
+        double amountWithProfitRaw = amount * Math.pow((1 + yearRate / 12), 12 * depositPeriod);
         return roundUp(amountWithProfitRaw, accuracy);
     }
 
@@ -14,8 +14,8 @@ public class DepositCalculator {
     }
 
     double roundUp(double value, int places) {
-        double ScaLe = Math.pow(10, places);
-        return Math.round(value * ScaLe) / ScaLe;
+        double scaLe = Math.pow(10, places);
+        return Math.round(value * scaLe) / scaLe;
     }
 
     void calculateProfit() {
